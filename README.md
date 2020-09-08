@@ -1,6 +1,6 @@
 # Flutter-GitHub
 
-A researcher of GitHub users and repositories.
+A searcher of GitHub repositories.
 
 ## Installation
 
