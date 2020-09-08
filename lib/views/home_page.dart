@@ -12,9 +12,12 @@ class HomePage extends StatelessWidget {
 
   final GlobalKey<ScaffoldState> _keyScaffold = GlobalKey<ScaffoldState>();
 
+  GlobalKey<ScaffoldState> get keyScaffold => _keyScaffold;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: keyScaffold,
       appBar: AppBarWidget(),
       body: _body(context),
     );
@@ -57,7 +60,19 @@ class HomePage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: TextFormFieldWidget(
           onFieldSubmmitted: (String value) {
-            context.read<RepositoriesProvider>().addRepository(value);
+            context.read<RepositoriesProvider>().addRepository(value, (String value) {
+              keyScaffold.currentState.showSnackBar(SnackBar(
+                content: Text(value),
+                backgroundColor: Colors.green,
+                duration: const Duration(milliseconds: 1000),
+              ));
+            }, (String value) {
+              keyScaffold.currentState.showSnackBar(SnackBar(
+                content: Text(value),
+                backgroundColor: Colors.red,
+                duration: const Duration(milliseconds: 1000),
+              ));
+            });
           },
           validator: (String value) {
             if (value.trim().isEmpty) return 'Campo obrigatorio';

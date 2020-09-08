@@ -15,7 +15,9 @@ class ListTileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dismissible(
+      resizeDuration: const Duration(milliseconds: 500),
       direction: DismissDirection.startToEnd,
+      movementDuration: const Duration(milliseconds: 500),
       background: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
@@ -30,9 +32,7 @@ class ListTileWidget extends StatelessWidget {
         ),
       ),
       key: Key(repository.id.toString()),
-      onDismissed: (_) {
-        delete(repository.id);
-      },
+      onDismissed: (_) => delete(repository.id),
       child: Container(
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: Colors.white),
         child: Padding(
