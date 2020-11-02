@@ -1,4 +1,4 @@
-# Flutter-GitHub
+# Flutter-GitHub-Repositories
 
 A searcher of GitHub repositories.
 
