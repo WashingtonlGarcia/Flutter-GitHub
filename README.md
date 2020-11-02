@@ -7,7 +7,7 @@ A searcher of GitHub repositories.
 This project is a starting point for a Flutter application.
 
 ```
-https://github.com/WashingtonlGarcia/Flutter-GitHub.git
+https://github.com/WashingtonlGarcia/Flutter-GitHub-Repositories.git
 ```
 
 ## Contributing
